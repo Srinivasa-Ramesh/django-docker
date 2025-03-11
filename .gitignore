@@ -1,0 +1,39 @@
+# Byte-compiled / binary files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+
+# Django secret key & environment variables
+*.env
+.env
+
+# Database files
+*.sqlite3
+
+# Logs & Debug files
+*.log
+logs/
+
+# Media and Static files (optional)
+media/
+static/
+
+# Ignore migrations (optional, but usually kept)
+*/migrations/*.py
+!*/migrations/__init__.py
+
+# Ignore IDE & OS-specific files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Ignore compiled files
+*.so
+*.o
+*.pyc
