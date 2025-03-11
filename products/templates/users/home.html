@@ -1,0 +1,56 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+{% load static %}
+
+
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="#">Messages</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container mt-4">
+    <h4>My Smart Basket</h4>
+    <div class="row">
+        {% for vegetable in products %}
+        <div class="col-md-3">
+            <div class="card">
+                <span class="discount-badge">{{ vegetable.disc }}% OFF</span>
+                <img src="{{ vegetable.image_url }}" class="card-img-top" alt="{{ vegetable.name }}">
+                <div class="card-body">
+                    <p class="text-muted">fresh!</p>
+                    <h5 class="card-title">{{ vegetable.name }}</h5>
+                    <p class="mb-1 price">₹{{ vegetable.final_price }} <span
+                            class="old-price">{{ vegetable.price }}</span> /KG</p><br>
+                    <a class="btn add-btn"  href="{% url 'cart' %}"> Add to Cart </a>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<footer class="container-fluid text-center">
+    <p>Online Store Copyright</p>
+
+
+
+
+</footer>
+
+
+</body>
+
+
+{% endblock content %}
