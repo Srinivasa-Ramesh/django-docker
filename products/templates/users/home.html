@@ -33,7 +33,8 @@
                     <h5 class="card-title">{{ vegetable.name }}</h5>
                     <p class="mb-1 price">₹{{ vegetable.final_price }} <span
                             class="old-price">{{ vegetable.price }}</span> /KG</p><br>
-                    <a class="btn add-btn"  href="{% url 'cart' %}"> Add to Cart </a>
+                    
+                    <button class="btn btn-success" s><a  href="{% url 'cart' %}"  style="color: aliceblue; text-decoration: none"> Add to Cart </a></button>
 
                 </div>
             </div>

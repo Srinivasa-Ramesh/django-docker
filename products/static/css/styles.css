@@ -38,11 +38,11 @@ body {
    color: grey;
 }
 .price {
-   font-size: 18px;
+   font-size: 20px;
    font-weight: bold;
    color: #28a745;
 }
-.btn add-btn {
+btn add-btn {
    width: 100%;
    border: 2px solid #7CFC00;
    color: #7CFC00;
