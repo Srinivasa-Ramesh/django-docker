@@ -1,4 +1,4 @@
-from django.shortcuts import render ,redirect
+from django.shortcuts import render ,redirect,get_object_or_404
 from  django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate ,logout
 from django.contrib import messages
@@ -47,35 +47,7 @@ def user_home(request):
 
     return render(request,'users/home.html',{'products':products})
 
+
 def cart(request):
-    cart_item = Product.objects.all()
-    return render(request,'users/cart.html', {'cart_item': cart_item})
-
-def add_to_cart(request, product_id):
-    """Add product to the cart stored in session"""
-    cart = request.session.get('cart', {})  # Get cart or empty dict
-
-    if str(product_id) in cart:
-        cart[str(product_id)] += 1  # Increase quantity if already in cart
-    else:
-        cart[str(product_id)] = 1  # Add new product with quantity 1
-
-    request.session['cart'] = cart  # Save back to session
-    return redirect('cart')  # Redirect to cart page
-
-def cart_page(request):
-    """Display cart items"""
-    cart = request.session.get('cart', {})  # Get cart from session
-    products = Product.objects.filter(id__in=cart.keys())  # Fetch products
-
-    cart_items = []
-    for product in products:
-        cart_items.append({
-            'product': product,
-            'quantity': cart[str(product.id)],
-            'subtotal': product.price * cart[str(product.id)]
-        })
-
-    total_price = sum(item['subtotal'] for item in cart_items)
-
-    return render(request, 'cart.html', {'cart_items': cart_items, 'total_price': total_price})
+    id_product= Product.objects.all()
+    return render(request, "users/cart.html", {"id_product": id_product})

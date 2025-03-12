@@ -34,7 +34,9 @@
                     <p class="mb-1 price">₹{{ vegetable.final_price }} <span
                             class="old-price">{{ vegetable.price }}</span> /KG</p><br>
                     
-                    <button class="btn btn-success" s><a  href="{% url 'cart' %}"  style="color: aliceblue; text-decoration: none"> Add to Cart </a></button>
+                            <a href="{% url 'cart' %}" style="text-decoration: none;">
+                                <button class="btn btn-success" style="color: aliceblue;">Add to Cart</button>
+                            </a>
 
                 </div>
             </div>
@@ -45,7 +47,7 @@
 <footer class="container-fluid text-center">
     <p>Online Store Copyright</p>
 
-
+    <p>Product ID: {{ product.id }}</p>
 
 
 </footer>

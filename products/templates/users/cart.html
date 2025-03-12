@@ -2,13 +2,13 @@
 {% block content %}
 {% load static %}
 <h1>
-  {% for item in cart_item %}
+  {% for item in id_product %}
      {{ item.name }}
   {% endfor %}
     {% for item in products %}
      {{ item.quantitiy }}
   {% endfor %}
-</h1>
+
 
 
 {% endblock %}
