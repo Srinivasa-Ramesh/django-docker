@@ -1,4 +1,5 @@
-# Django Ranger  
+# Fshop
+
 Built with **Django**, **Django REST Framework**, **PostgreSQL**, and **Docker**.
 
 ---
